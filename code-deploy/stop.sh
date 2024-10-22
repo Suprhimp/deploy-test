@@ -8,7 +8,6 @@ KILL_LOG="$PROJECT_ROOT/kill.log"
 TIME_NOW=$(date +%c)
 
 CURRENT_PID=$(pgrep -f app:app)
-sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a stop
 if [ -z $CURRENT_PID ]; then
     echo "$TIME_NOW > 현재 실행중인 애플리케이션이 없습니다." >> $DEPLOY_LOG
     # echo 현재 실행중인 애플리케이션이 없습니다.
